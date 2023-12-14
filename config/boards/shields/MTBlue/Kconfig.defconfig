@@ -1,6 +1,0 @@
-if SHIELD_MTBlue
-
-config ZMK_KEYBOARD_NAME
-    default "MTBlue"
-
-endif
