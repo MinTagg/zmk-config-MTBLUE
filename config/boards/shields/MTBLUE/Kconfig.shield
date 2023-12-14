@@ -1,0 +1,2 @@
+config SHIELD_MTBLUE
+    def_bool $(shields_list_contains,mtblue)
