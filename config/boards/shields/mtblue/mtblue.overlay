@@ -16,9 +16,9 @@
         compatible = "zmk,matrix-transform";
         rows = <3>;
         columns = <3>;
-        
+
         map = <
-        RC(0,0) RC(0,1) RC(0,2)
+        RC(0,0) RC(0,1) RC(0,2) RC(0,4)
         RC(1,0)         RC(1,2)
         RC(2,0) RC(2,1) RC(2,2)
         >;
@@ -37,7 +37,7 @@
 
         direct {
             kscan = <&kscan_enc>;
-            column-offset = <6>; 
+            column-offset = <4>; // 위쪽 map에 RC(0,4)에 해당하는 column인 4가 여기에 해당
         };
     };
 
@@ -72,8 +72,8 @@
         compatible = "alps,ec11";
         label = "ENCODER";
         resolution = <4>;
-        a-gpios = <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // DT (B)
+        b-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // CLK (A)
     };
     sensors {
         compatible = "zmk,keymap-sensors";
