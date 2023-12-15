@@ -16,11 +16,7 @@
         compatible = "zmk,matrix-transform";
         rows = <3>;
         columns = <3>;
-
-//      | SW01  | SW02  | SW03  | SW04  | TK01  |  EN01  |
-//      | SW05  | SW06  | SW07  | SW08  | TK02  |
-//              | SW09  | SW10  | SW11  | TK03  | 
-
+        
         map = <
         RC(0,0) RC(0,1) RC(0,2)
         RC(1,0)         RC(1,2)
@@ -53,14 +49,14 @@
         diode-direction = "col2row"; 
 
         col-gpios
-            = <&xiao_d 15 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 14 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 16 GPIO_ACTIVE_HIGH>
+            = <&pro_micro 15 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 14 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 16 GPIO_ACTIVE_HIGH>
             ;
         row-gpios
-            = <&xiao_d 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_d 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_d 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
 
@@ -68,7 +64,7 @@
         compatible = "zmk,kscan-gpio-direct";
         label = "KSCAN_ENC";
         input-gpios
-            = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            = <&pro_micro 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             ;
     };
 
@@ -76,8 +72,8 @@
         compatible = "alps,ec11";
         label = "ENCODER";
         resolution = <4>;
-        a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     };
     sensors {
         compatible = "zmk,keymap-sensors";
