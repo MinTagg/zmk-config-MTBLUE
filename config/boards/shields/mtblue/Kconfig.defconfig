@@ -1,14 +1,15 @@
 if SHIELD_mtblue
-    config ZMK_KEYBOARD_NAME
-        default "MTBlue"
 
-    config I2C
-        default y
-    
-    config GPIO_MCP2300XX
-        default y
-    
-    config EC11
-        default y
+config ZMK_KEYBOARD_NAME
+    default "MTBLUE"
+
+config I2C
+    default y
+
+config GPIO_MCP2300XX
+    default y
+
+config EC11
+    default y
 
 endif
