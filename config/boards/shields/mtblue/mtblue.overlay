@@ -5,7 +5,6 @@
  */
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "mtblue_mcuboot.overlay"
 
 &pinctrl {
     qdec_default: qdec_default {
